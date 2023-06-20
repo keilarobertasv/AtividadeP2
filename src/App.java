@@ -68,6 +68,7 @@ public class App {
         " as opções disponibilizadas nas alternativas.");
        }       
 
+       
         scanner.close();
     
 
