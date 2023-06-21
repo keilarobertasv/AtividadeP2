@@ -14,7 +14,7 @@ public class App {
         " Um dia, enquanto visitava uma exposição de arte, Clary testemunhou uma cena"+
         " estranha: um grupo de jovens lutando contra criaturas sobrenaturais que são"+
         " invisíveis a olhos humanos, mas que ela, por algum motivo, estava vendo."+
-        "\n-----------VOCÊ DECIDE------------\n O QUE CLARY DEVE FAZER?" );
+        " \n-----------VOCÊ DECIDE------------\n O QUE CLARY DEVE FAZER?" );
         System.out.println(" a) Interferir \n b) Aguardar a luta acabar");
 
       
