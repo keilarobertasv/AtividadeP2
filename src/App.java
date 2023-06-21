@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        //Printando informações sobre o "Livro jogo"
+        //Printando informações sobre o "Livro jogo" antes de iniciar
 
         System.out.println("SEJA BEM-VINDO!"+"\n Não utilize acentuação"+
         " e nem pontuação para responder às opções."+
