@@ -64,7 +64,7 @@ public class App {
         else if(resposta3.equalsIgnoreCase(escolha8)){
         final2(args);} 
         else{
-        System.out.println("Desculpe, não entendi. Responda utilizando apenas"+
+        System.out.println("Desculpe,  não entendi. Responda utilizando apenas"+
         " as opções disponibilizadas nas alternativas.");
        }       
 
