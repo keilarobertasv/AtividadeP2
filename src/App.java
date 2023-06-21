@@ -133,10 +133,10 @@ public class App {
         " ao lado de outros caçadores das sombras. Com coragem e determinação, derrotaram"+
         " as forças das trevas, e os mundos natual e sobrenatural ficaram em paz e harmonia.");
         System.out.println("Com a guerra terminada, Clary e Jace finalmente puderam se entregar ao"+
-      " amor que sentiam um pelo outro. Eles construíram uma vida feliz juntos, usando seus talentos"+
-      " artísticos para inspirar e trazer beleza ao mundo. Clary continuou pintando, e Jace se tornou"+
-      " um habilidoso escultor. Juntos, eles formaram uma dupla dinâmica, celebrando o amor,"+ 
-      " a amizade e a aventura em cada momento.");
+        " amor que sentiam um pelo outro. Eles construíram uma vida feliz juntos, usando seus talentos"+
+        " artísticos para inspirar e trazer beleza ao mundo. Clary continuou pintando, e Jace se tornou"+
+        " um habilidoso escultor. Juntos, eles formaram uma dupla dinâmica, celebrando o amor,"+ 
+        " a amizade e a aventura em cada momento.");
 
 
     }
