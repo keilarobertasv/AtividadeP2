@@ -1,8 +1,10 @@
 import java.util.Scanner;
-
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
+      
+        Personagem Clary = new Personagem("Clary", "F", 100);
+        Personagem Jace = new Personagem("Jace", "M", 100);
         //Printando informações sobre o "Livro jogo" antes de iniciar
 
         System.out.println("SEJA BEM-VINDO!"+"\n Não utilize acentuação"+
@@ -23,8 +25,10 @@ public class App {
         String escolha2 =("Aguardar a luta acabar");
         String resposta = scanner.nextLine();
         if(resposta.equalsIgnoreCase(escolha1)){
+            Clary.cansar();
         interferir(args);}
         else if(resposta.equalsIgnoreCase(escolha2)){
+            Clary.cansar();
         NaoInterferir(args);}
         else{
             System.out.println("Desculpe, não entendi. Responda utilizando apenas"+
@@ -36,8 +40,10 @@ public class App {
         String escolha4 = ("Nao acreditar");
         String resposta1 = scanner.nextLine();
         if(resposta1.equalsIgnoreCase(escolha3)){
+            Clary.cansar();
         acreditar1(args);}
         else if(resposta1.equalsIgnoreCase(escolha4)){
+            Clary.cansar();
         NaoAcreditar(args);}
         else{
             System.out.println("Desculpe, não entendi. Responda utilizando apenas"+
@@ -48,8 +54,10 @@ public class App {
        String escolha6 = ("Nao lutar");
        String resposta2 = scanner.nextLine();
        if(resposta2.equalsIgnoreCase(escolha5)){
+        Clary.cansar();
         final1(args);}
        else if(resposta2.equalsIgnoreCase(escolha6)){
+        Jace.morrer();
         final2(args);}
        else{
         System.out.println("Desculpe, não entendi. Responda utilizando apenas"+
@@ -60,12 +68,14 @@ public class App {
         String escolha8 = ("Deixar que eles lutem sozinhos");
         String resposta3 = scanner.nextLine();
         if(resposta3.equalsIgnoreCase(escolha7)){
-        final1(args);}
+            Clary.cansar();
+         final1(args);}
         else if(resposta3.equalsIgnoreCase(escolha8)){
-        final2(args);} 
+            Jace.morrer();
+          final2(args);} 
         else{
-        System.out.println("Desculpe, não entendi. Responda utilizando apenas"+
-        " as opções disponibilizadas nas alternativas.");
+         System.out.println("Desculpe, não entendi. Responda utilizando apenas"+
+         " as opções disponibilizadas nas alternativas.");
        }       
 
        
@@ -77,27 +87,31 @@ public class App {
     }
     //Criando os métodos pra usar na lógica
     public static void interferir(String[] args){
+        System.out.println("-------CAPÍTULO DOIS------\n");
      System.out.println("Clary interferiu na briga e quase foi ferida mortalmente, mas um dos jovens"+
      " a salvou antes que isso acontecesse. Ele se chama Jace e prometeu explicar o que estava acontecendo.");
      System.out.println("Jace contou que eles eram Caçadores das Sombras, uma antiga linhagem"+
         " de guerreiros nephlim que protegiam o mundo humano dos demônios, mantendo a paz entre as"+
         " criaturas sobrenaturais.");
         System.out.println("O QUE ELA DEVE FAZER? \n a) Acreditar \n b) Não acreditar");
+        
+      
 
     }
 
     public static void NaoInterferir(String[] args){
+        System.out.println("------CAPÍTULO DOIS-----\n");
       System.out.println("Clary aguardou até que a briga acabasse e depois foi ao encontro"+
       " do grupo de jovens que havia acabado de lutar. Ao exigir uma explicação"+
       " um deles, chamado Jace, resolveu falar: Jace contou que eles eram CaÇadores das Sombras,"+
       " uma antiga linhagem de guerreiros nephlim que protegiam o mundo humano dos demônios,"+
-      " mantendo a paz entre as criaturas sobrenaturais");
+      " mantendo a paz entre as criaturas sobrenaturais. Isso exigiu um pouco de energia mental.");
       System.out.println("O QUE ELA DEVE FAZER? \n a) Acreditar \n b) Não acreditar");
 
 
     }
     public static void acreditar1(String[] args){
-        
+        System.out.println("------CAPÍTULO TRÊS-----\n");
      System.out.println("Clary ouviu atentamente o que Jace lhe dissera, e, por algum"+
      " motivo, pareceu fazer sentido.");
      System.out.println("Depois daquele dia, Clary descobriu que também era uma caçadora"+
@@ -115,7 +129,7 @@ public class App {
     }
     
     public static void NaoAcreditar(String[] args){
-
+        System.out.println("------CAPÍTULO TRÊS-----\n");
         System.out.println("Clary deixou que Jace se explicasse, mas não acreditou"+
         " no que o rapaz lhe dissera. Jace até insistiu, mas ela não quis conversa.");
         System.out.println("O tempo passou, e Clary acabou descobrindo que tudo era verdade e que"+
@@ -129,6 +143,7 @@ public class App {
     
 
     public static void final1(String[] args){
+        System.out.println("------CAPÍTULO QUATRO (FIM)-----\n");
           System.out.println("No Clímax da batalha contra os demônios, Clary e Jace lutaram juntos"+
         " ao lado de outros caçadores das sombras. Com coragem e determinação, derrotaram"+
         " as forças das trevas, e os mundos natual e sobrenatural ficaram em paz e harmonia.");
@@ -141,6 +156,7 @@ public class App {
 
     }
     public static void final2(String[] args){
+        System.out.println("------CAPÍTULO QUATRO (FIM)-----\n");
       System.out.println("No clímax da batalha contra os demônios, Clary escolheu não"+
       " lutar, apesar de amar muito Jace. O rapaz lutou sozinho ao lado de seus amigos"+
       "Caçadores das sombras e acabou não resistindo aos ferimentos de guerra. Jace"+
