@@ -9,7 +9,7 @@ public class Personagem{
       this.energia = energia;
 
     }
-    public void cansar(){
+    public int cansar(){
         energia = (this.energia - 15);
         System.out.println(this.nome + " se cansou e perdeu 15 pontos de energia");
         System.out.println("\nSua energia agora é de " + this.energia + ".\n");
@@ -22,6 +22,7 @@ public class Personagem{
             System.out.println("\n"+this.nome + " se cansou de mais e morreu.");
             this.vivo = false;
         }
+        return energia;
     }
 
     public void morrer(){
