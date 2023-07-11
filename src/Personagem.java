@@ -2,7 +2,7 @@ public class Personagem{
     String nome;
     String sexo;
     int energia;
-    boolean vivo;
+    boolean vivo = true;
     public Personagem(String nome, String sexo, int energia){
       this.nome = nome;
       this.sexo = sexo;

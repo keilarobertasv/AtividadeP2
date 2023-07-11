@@ -94,7 +94,7 @@ public class App {
         " artísticos para inspirar e trazer beleza ao mundo. Clary continuou pintando, e Jace se tornou"+
         " um habilidoso escultor. Juntos, eles formaram uma dupla dinâmica, celebrando o amor,"+ 
         " a amizade e a aventura em cada momento.",
-         null, null, Jace, scanner);
+         null, null, Clary, scanner);
          
         Clary.vivo = true;
         cap1.mostrar();
@@ -108,7 +108,7 @@ public class App {
             cap4.mostrar();
             int escolhacap4 = cap4.escolher();
             if (escolhacap4 == 1){
-              Jace.morrer();
+              Jace.vivo = false;
               cap5.mostrar();
             }
             else if(escolhacap4 == 2){
@@ -125,8 +125,9 @@ public class App {
               cap7.mostrar();
             }
             else if (escolhacap6 == 2){
-              Jace.morrer();
+              Jace.vivo = false;
               cap5.mostrar();
+              
             }
            }
         }
@@ -139,7 +140,7 @@ public class App {
             cap4.mostrar();
             int escolhacap4 = cap4.escolher();
             if (escolhacap4 == 1){
-              Jace.morrer();
+              Jace.vivo = false;
               cap5.mostrar();}
             
             else if(escolhacap4 == 2){
@@ -154,7 +155,7 @@ public class App {
               cap7.mostrar();
             }
             else if (escolhacap6 == 2){
-              Jace.morrer();
+              Jace.vivo = false;
               cap5.mostrar();
             }
           
