@@ -3,16 +3,14 @@ import java.util.Scanner;
 public class Capitulo {
     private String nome;
     private String texto;
-    private String escolha1;
-    private String escolha2;
+    private String [] escolhas;
     private Personagem personagem;
     private Scanner scanner;
 
-    public Capitulo(String nome, String texto, String escolha1, String escolha2, Personagem personagem, Scanner scanner) {
+    public Capitulo(String nome, String texto, String[] escolhas, Personagem personagem, Scanner scanner) {
         this.nome = nome;
         this.texto = texto;
-        this.escolha1 = escolha1;
-        this.escolha2 = escolha2;
+        this.escolhas = escolhas;
         this.personagem = personagem;
         this.scanner = scanner;
     }
@@ -21,11 +19,11 @@ public class Capitulo {
         System.out.println("-------------------");
         System.out.println(nome);
         System.out.println(texto);
-        if (this.escolha1 != null){
-         System.out.println(escolha1);
+        if (escolhas[0] != null){
+            System.out.println(escolhas[0]);
         }
-        if (this.escolha2 != null){
-         System.out.println(escolha2);
+        if (escolhas[1] != null){
+            System.out.println(escolhas[1]);
         }
         
         
@@ -49,10 +47,10 @@ public class Capitulo {
             System.out.print("Digite sua escolha: ");
             String input = scanner.nextLine();
 
-            if (input.equalsIgnoreCase(escolha1)) {
+            if (input.equalsIgnoreCase(escolhas[0])) {
                 resposta = 1;
                 escolhaValida = true;
-            } else if (input.equalsIgnoreCase(escolha2)) {
+            } else if (input.equalsIgnoreCase(escolhas[1])) {
                 resposta = 2;
                 escolhaValida = true;
             } else {
