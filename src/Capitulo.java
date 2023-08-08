@@ -15,22 +15,24 @@ public class Capitulo {
         this.personagem = personagem;
         this.scanner = scanner;
     }
-   public void executar() {
-    mostrar();
-    Capitulo proximoCapitulo = escolher();
-    proximoCapitulo.executar();
-}
+
+    public void executar() {
+        mostrar();
+        Capitulo proximoCapitulo = escolher();
+        proximoCapitulo.executar();
+    }
 
     public void mostrar() {
-
         System.out.println(nome);
         System.out.println(texto);
         System.out.println("-------------------");
-         if (this.personagem.vivo) {
+        
+        if (this.personagem.taVivo()) {  
             personagem.cansar();
         } else {
             this.personagem.morrer();
         }
+        
         System.out.println("-------------------");
     }
 
@@ -41,23 +43,21 @@ public class Capitulo {
     public Capitulo escolher() {
         int resposta = 0;
         boolean escolhaValida = false;
-    
+
         do {
             for (int i = 0; i < escolhas.size(); i++) {
-                if (escolhas.get(i) == null){
-                    System.out.println("FIM");
+                Escolha escolha = escolhas.get(i);
+                if (escolha != null) {
+                    System.out.println(escolha.getTexto());
                 }
-            }
-
-            for (int i = 0; i < escolhas.size(); i++) {
-                System.out.println(escolhas.get(i).getTexto());
             }
     
             System.out.print("Digite sua escolha: ");
             String input = scanner.nextLine();
     
             for (int i = 0; i < escolhas.size(); i++) {
-                if (escolhas.get(i).getTexto().equalsIgnoreCase(input)) {
+                Escolha escolha = escolhas.get(i);
+                if (escolha != null && escolha.getTexto().equalsIgnoreCase(input)) {
                     resposta = i + 1;
                     escolhaValida = true;
                     break;
@@ -68,12 +68,8 @@ public class Capitulo {
                 System.out.println("Escolha inválida. Digite uma opção válida.");
             }
         } while (!escolhaValida);
+    
         return escolhas.get(resposta - 1).getProximo();
-        
     }
     
-        
 }
-    
-
-
