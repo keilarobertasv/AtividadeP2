@@ -30,14 +30,14 @@ public class Personagem {
         return vivo;
     }
 
-    public int cansar() {
-        energia = (this.energia - 15);
-        System.out.println(this.nome + " se cansou e perdeu 15 pontos de energia");
+    public int cansar(int energiaPersonagem) {
+        this.energia += energiaPersonagem ;
+        System.out.println(this.nome + " se cansou e perdeu "+ energiaPersonagem + " pontos de energia");
         System.out.println("\nSua energia agora é de " + this.energia + ".\n");
-        if (this.energia <= 0) {
-            System.out.println(this.nome + " se cansou de mais e morreu");
-            this.vivo = false;
-        }
+       if(this.energia<=0){
+        System.out.println(this.nome + " morreu");
+
+       }
         return energia;
     }
 

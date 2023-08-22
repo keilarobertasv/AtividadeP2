@@ -1,8 +1,8 @@
 public class Escolha {
     private String texto;
-    private Capitulo proximo;
+    private String proximo;
 
-    public Escolha(String texto, Capitulo proximo) {
+    public Escolha(String texto, String proximo) {
         this.texto = texto;
         this.proximo = proximo;
     }
@@ -11,7 +11,7 @@ public class Escolha {
         return texto;
     }
 
-    public Capitulo getProximo() {
+    public String getProximo() {
         return proximo;
     }
 }
