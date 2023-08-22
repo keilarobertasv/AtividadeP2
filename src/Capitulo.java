@@ -1,36 +1,40 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Capitulo {
-    private String nome;
+    private String nomeDoCapitulo;
     private String texto;
     private ArrayList<Escolha> escolhas;
-    private Personagem personagem;
+    private Personagem nomePersonagem;
     private Scanner scanner;
+    private int energia;
 
-    public Capitulo(String nome, String texto, Personagem personagem, Scanner scanner) {
-        this.nome = nome;
+    public Capitulo(String nomeDoCapitulo, String texto, Personagem nomePersonagem,int energia, Scanner scanner) {
+        this.nomeDoCapitulo = nomeDoCapitulo;
         this.texto = texto;
         this.escolhas = new ArrayList<>();
-        this.personagem = personagem;
+        this.nomePersonagem = nomePersonagem;
         this.scanner = scanner;
+        this.energia = energia;
     }
 
-    public void executar() {
+    public void executar(HashMap<String, Capitulo> capitulos) {
         mostrar();
-        Capitulo proximoCapitulo = escolher();
-        proximoCapitulo.executar();
+        String proximoCapitulo = escolher();
+        capitulos.get(proximoCapitulo).executar(capitulos);
+
     }
 
     public void mostrar() {
-        System.out.println(nome);
+        System.out.println(nomeDoCapitulo);
         System.out.println(texto);
         System.out.println("-------------------");
         
-        if (this.personagem.taVivo()) {  
-            personagem.cansar();
+        if (this.nomePersonagem.taVivo()) {  
+            nomePersonagem.cansar(this.energia);
         } else {
-            this.personagem.morrer();
+            this.nomePersonagem.morrer();
         }
         
         System.out.println("-------------------");
@@ -40,11 +44,11 @@ public class Capitulo {
         escolhas.add(escolha);
     }
 
-    public Capitulo escolher() {
+    public String escolher() {
         int resposta = 0;
         boolean escolhaValida = false;
-
-        do {
+        
+         {
             for (int i = 0; i < escolhas.size(); i++) {
                 Escolha escolha = escolhas.get(i);
                 if (escolha != null) {
@@ -67,9 +71,11 @@ public class Capitulo {
             if (!escolhaValida) {
                 System.out.println("Escolha inválida. Digite uma opção válida.");
             }
-        } while (!escolhaValida);
+            
+         
     
         return escolhas.get(resposta - 1).getProximo();
+
     }
     
-}
+}}
