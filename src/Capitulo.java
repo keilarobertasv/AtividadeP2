@@ -21,6 +21,9 @@ public class Capitulo {
 
     public void executar(HashMap<String, Capitulo> capitulos) {
         mostrar();
+        if(escolhas.isEmpty()){
+            return;
+        }
         String proximoCapitulo = escolher();
         capitulos.get(proximoCapitulo).executar(capitulos);
 
@@ -48,7 +51,7 @@ public class Capitulo {
         int resposta = 0;
         boolean escolhaValida = false;
         
-         {
+         
             for (int i = 0; i < escolhas.size(); i++) {
                 Escolha escolha = escolhas.get(i);
                 if (escolha != null) {
@@ -71,11 +74,11 @@ public class Capitulo {
             if (!escolhaValida) {
                 System.out.println("Escolha inválida. Digite uma opção válida.");
             }
-            
+            while (!escolhaValida);
          
     
         return escolhas.get(resposta - 1).getProximo();
 
     }
     
-}}
+}
